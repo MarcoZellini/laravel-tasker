@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tasker - @yield('page-title', 'Welcome')</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    @vite('resources/js/app.js')
+
+</head>
+
+<body>
+    <header class="bg-dark text-light">
+        <nav class="nav justify-content-center  ">
+            <a class="nav-link active" href="{{ route('tasks.index') }}">Dashboard</a>
+            <a class="nav-link" href="{{ route('tasks.create') }}">Create Task</a>
+            <a class="nav-link" href="#">User's Page</a>
+        </nav>
+    </header>
+
+    <main>
+        @yield('content')
+    </main>
+    @include('partials.footer')
+</body>
+
+</html>

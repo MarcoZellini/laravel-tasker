@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\TaskController;
+use App\Http\Controllers\Guests\PageController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'index'])->name('home');
+
+Route::resource('admin/tasks', TaskController::class);
